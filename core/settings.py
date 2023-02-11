@@ -25,8 +25,8 @@ SECRET_KEY = config("SECRET_KEY")
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    "mercurius-api-production.up.railway.app",
-    "mercurius-production.up.railway.app",
+    "mercurius-backend.up.railway.app",
+    "mercurius.up.railway.app",
     "localhost:3000",
     "127.0.0.1:3000",
     "localhost:8000",
@@ -36,8 +36,8 @@ ALLOWED_HOSTS = [
 ]
 
 CSRF_TRUSTED_ORIGINS = [
-    "https://mercurius-api-production.up.railway.app",
-    "https://mercurius-production.up.railway.app",
+    "https://mercurius-backend.up.railway.app",
+    "https://mercurius.up.railway.app",
     "http://localhost:3000",
     "http://127.0.0.1:3000",
     "http://localhost:8000",
@@ -65,7 +65,7 @@ INSTALLED_APPS = [
     "payments",
     "inbox",
     "contact",
-    
+
     # Third Party Apps
     "rest_framework",
     "rest_framework.authtoken",
@@ -91,8 +91,8 @@ CORS_ALLOWED_ORIGINS = [
     "http://127.0.0.1:3000",
     "http://localhost:8000",
     "http://127.0.0.1:8000",
-    "https://mercurius-api-production.up.railway.app",
-    "https://mercurius-production.up.railway.app",
+    "https://mercurius-backend.up.railway.app",
+    "https://mercurius.up.railway.app",
     "http://localhost",
     "https://0ac0-102-89-45-214.eu.ngrok.io",  # ngrok tunnel
 ]
@@ -142,23 +142,23 @@ WSGI_APPLICATION = "core.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-# DATABASES = {
-#     "default": {
-#         "ENGINE": "django.db.backends.mysql",
-#         "NAME": "railway",
-#         "USER": "root",
-#         "PASSWORD": "IWn8wAAYv9RX0F6ShfdO",
-#         "HOST": "containers-us-west-85.railway.app",
-#         "PORT": "6115",
-#     }
-# }
-
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+        "ENGINE": "django.db.backends.mysql",
+        "NAME": "railway",
+        "USER": "root",
+        "PASSWORD": "TZiODRtqKFJN7GvZXR2J",
+        "HOST": "containers-us-west-166.railway.app",
+        "PORT": "7040",
     }
 }
+
+# DATABASES = {
+#     "default": {
+#         "ENGINE": "django.db.backends.sqlite3",
+#         "NAME": BASE_DIR / "db.sqlite3",
+#     }
+# }
 
 
 # Password validation

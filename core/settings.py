@@ -40,6 +40,7 @@ CSRF_TRUSTED_ORIGINS = [
     "https://mercurius-backend.up.railway.app",
     "https://mercurius.up.railway.app",
     "https://mercurius.ng",
+    "http://mercurius.ng",
     "http://localhost:3000",
     "http://127.0.0.1:3000",
     "http://localhost:8000",
@@ -95,7 +96,8 @@ CORS_ALLOWED_ORIGINS = [
     "http://127.0.0.1:8000",
     "https://mercurius-backend.up.railway.app",
     "https://mercurius.up.railway.app",
-    "https://https://mercurius.ng",
+    "https://mercurius.ng",
+    "http://mercurius.ng",
     "http://localhost",
     "https://0ac0-102-89-45-214.eu.ngrok.io",  # ngrok tunnel
 ]

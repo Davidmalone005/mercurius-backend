@@ -27,6 +27,7 @@ DEBUG = True
 ALLOWED_HOSTS = [
     "mercurius-backend.up.railway.app",
     "mercurius.up.railway.app",
+    "mercurius.ng",
     "localhost:3000",
     "127.0.0.1:3000",
     "localhost:8000",
@@ -38,6 +39,7 @@ ALLOWED_HOSTS = [
 CSRF_TRUSTED_ORIGINS = [
     "https://mercurius-backend.up.railway.app",
     "https://mercurius.up.railway.app",
+    "https://mercurius.ng",
     "http://localhost:3000",
     "http://127.0.0.1:3000",
     "http://localhost:8000",
@@ -93,6 +95,7 @@ CORS_ALLOWED_ORIGINS = [
     "http://127.0.0.1:8000",
     "https://mercurius-backend.up.railway.app",
     "https://mercurius.up.railway.app",
+    "https://https://mercurius.ng",
     "http://localhost",
     "https://0ac0-102-89-45-214.eu.ngrok.io",  # ngrok tunnel
 ]

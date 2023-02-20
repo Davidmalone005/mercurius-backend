@@ -1,6 +1,7 @@
 import random
 import string
 from datetime import datetime, timedelta
+from django.utils import timezone
 
 from django.db import models
 from django.utils.translation import gettext_lazy as _
@@ -264,7 +265,7 @@ class Storehouse(models.Model):
         return self.order.reference
 
     def save(self, *args, **kwargs):
-        self.billing_starts = datetime.today() + timedelta(minutes=5)
+        self.billing_starts = timezone.now() + timedelta(minutes=10)
         super().save(*args, **kwargs)
 
 

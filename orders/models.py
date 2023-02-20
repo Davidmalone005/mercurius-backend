@@ -264,7 +264,7 @@ class Storehouse(models.Model):
         return self.order.reference
 
     def save(self, *args, **kwargs):
-        self.billing_starts = datetime.today() + timedelta(hours=1)
+        self.billing_starts = datetime.today() + timedelta(minutes=5)
         super().save(*args, **kwargs)
 
 

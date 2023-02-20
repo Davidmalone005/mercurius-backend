@@ -21,6 +21,7 @@ class AddressListAPIView(generics.ListAPIView):
 def AddAddressAPIView(request: Request):
 
     if request.method == "POST":
+        print(request.data)
         data = request.data
         serializer = AddressSerializer(data=data)
 

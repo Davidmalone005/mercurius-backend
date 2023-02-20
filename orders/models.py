@@ -263,13 +263,9 @@ class Storehouse(models.Model):
     def __str__(self):
         return self.order.reference
 
-    @property
-    def get_billing_starts_date(self):
-        self.billing_starts = datetime.today() + timedelta(days=14)
-
-    # def save(self, *args, **kwargs):
-
-    #     super().save(*args, **kwargs)
+    def save(self, *args, **kwargs):
+        self.billing_starts = datetime.today() + timedelta(hours=1)
+        super().save(*args, **kwargs)
 
 
 class ShippingRate(models.Model):

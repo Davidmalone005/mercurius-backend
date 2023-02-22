@@ -55,7 +55,9 @@ class Order(models.Model):
         null=False, blank=False, unique=False, verbose_name=_("Sales Tax")
     )
 
-    #   coupon = models.ManyToManyField(Coupon, blank=True)
+    used_coupon = models.BooleanField(
+        default=False, verbose_name="Was coupon applied at Checkout?"
+    )
 
     payment_method = models.CharField(
         max_length=27,
@@ -137,6 +139,14 @@ class OrderedItem(models.Model):
         blank=False,
         verbose_name=_("Ordered Item Price"),
         help_text=_("format: price of item ordered"),
+    )
+
+    flashsale_price = models.IntegerField(
+        unique=False,
+        null=False,
+        blank=False,
+        verbose_name=_("Ordered Item Flashsale Price"),
+        help_text=_("format: flashsale price of item ordered"),
     )
 
     qty = models.IntegerField(

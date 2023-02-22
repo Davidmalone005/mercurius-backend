@@ -75,6 +75,7 @@ def PaystackWebhookAPIView(request):
                             "paid_at": data["data"]["paid_at"],
                             "user": user_id,
                             "order": so.order.pk,
+                            
                         }
 
                         serializer = UpdateStorehouseSerializer(
@@ -115,6 +116,7 @@ def PaystackWebhookAPIView(request):
                         "paid_at": data["data"]["paid_at"],
                         "user": user_id,
                         "order": order_id,
+                        "used_coupon": "No"
                     }
 
                     serializer = UpdateStorehouseSerializer(
@@ -128,6 +130,8 @@ def PaystackWebhookAPIView(request):
                 amountTotal = data["data"]["amount"] / 100
 
                 orderedItems = data["data"]["metadata"]["cart"]
+                
+                used_coupon = data["data"]["metadata"]["used_coupon"]
 
                 if orderedItems:
                     orderDetails = {
@@ -146,6 +150,7 @@ def PaystackWebhookAPIView(request):
                         "currency": data["data"]["currency"],
                         "paid_at": data["data"]["paid_at"],
                         "created_at": data["data"]["created_at"],
+                        "used_coupon": used_coupon,
                     }
 
                     serializer = OrderSerializer(data=orderDetails)
@@ -163,6 +168,7 @@ def PaystackWebhookAPIView(request):
                                     "description"
                                 ],
                                 "price": orderedItems[item]["price"],
+                                "flashsale_price": orderedItems[item]["flashsale_price"],
                                 "qty": orderedItems[item]["qty"],
                                 "size": orderedItems[item]["size"],
                                 "defaultImage": orderedItems[item][

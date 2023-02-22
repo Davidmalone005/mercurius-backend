@@ -10,6 +10,7 @@ class OrderedItemSerializer(serializers.ModelSerializer):
     name = serializers.CharField()
     description = serializers.CharField()
     price = serializers.IntegerField()
+    flashsale_price = serializers.IntegerField()
     qty = serializers.IntegerField()
     defaultImage = serializers.CharField()
 
@@ -22,6 +23,7 @@ class OrderedItemSerializer(serializers.ModelSerializer):
             "name",
             "description",
             "price",
+            "flashsale_price",
             "qty",
             "size",
             "defaultImage",
@@ -79,6 +81,7 @@ class OrderSerializer(serializers.ModelSerializer):
     payment_method = serializers.CharField(max_length=27)
     payment_type = serializers.CharField(max_length=30)
     currency = serializers.CharField(max_length=27)
+    used_coupon = serializers.BooleanField()
     paid_at = serializers.DateTimeField()
     created_at = serializers.DateTimeField()
 

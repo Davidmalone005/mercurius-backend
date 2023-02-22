@@ -208,3 +208,17 @@ def PaystackWebhookAPIView(request):
 
         return HttpResponse("Error loading...")
     return HttpResponse("Webhook waiting...")
+
+
+@csrf_exempt
+def PaystackCallbackUrlAPIView(request):
+    if request.method == "POST":
+        body = request.body
+        data = {}
+
+        try:
+            data = json.loads(body)
+        except:
+            pass
+
+        print(data)

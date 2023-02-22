@@ -31,7 +31,7 @@ class UserAdmin(BaseUserAdmin):
 
     list_display = ("fullname", "email", "phone", "gender", "dob", "is_staff", "last_login")
     list_filter = ("gender", "dob", "is_staff", "is_superuser", "is_active", "groups")
-    search_fields = ("email",)
+    search_fields = ["email", "fullname", "phone",]
     ordering = ("date_joined",)
     filter_horizontal = (
         "groups",

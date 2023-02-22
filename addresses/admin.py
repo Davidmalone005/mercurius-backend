@@ -20,3 +20,12 @@ class AddressAdmin(admin.ModelAdmin):
         "country",
         "is_default",
     ]
+
+    search_fields = [
+        "user",
+        "street_name",
+        "lga",
+        "state",
+        "country",
+        "is_default",
+    ]

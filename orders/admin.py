@@ -5,7 +5,7 @@ from .models import Coupon, Order, OrderedItem, ShippingRate, Storehouse
 # Register your models here.
 
 
-class OrderItemInlineModel(admin.TabularInline):
+class OrderItemInlineModel(admin.StackedInline):
     model = OrderedItem
     fields = [
         "name",

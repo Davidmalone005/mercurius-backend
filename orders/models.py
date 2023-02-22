@@ -275,7 +275,7 @@ class Storehouse(models.Model):
         return self.order.reference
 
     def save(self, *args, **kwargs):
-        self.billing_starts = timezone.now() + timedelta(minutes=5)
+        self.billing_starts = timezone.now() + timedelta(minutes=1)
         super().save(*args, **kwargs)
 
 
